@@ -5,10 +5,6 @@ import math
 from mysql.connector import connection
 from flask_cors import CORS
 
-app = Flask(__name__)
-CORS(app) # Allow all domains by default
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
-
 # Define AWS Credentials
 DB_HOST = 'awsdatabase.cvmkooke0uh1.us-east-1.rds.amazonaws.com'
 DB_PORT = '3306'
