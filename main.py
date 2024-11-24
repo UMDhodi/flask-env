@@ -3,8 +3,10 @@ import pandas as pd
 import json
 import math
 from mysql.connector import connection
+from flask_cors import CORS  # Import CORS
 
 app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000/"}})  # Enable CORS for all origins and /api/* routes
 
 # Define AWS Credentials
 DB_HOST = 'awsdatabase.cvmkooke0uh1.us-east-1.rds.amazonaws.com'
@@ -26,11 +28,11 @@ EMISSION_FACTOR_CAR_URBAN = 0.12
 def connect_to_rds():
     try:
         conn = connection.MySQLConnection(
-            host = DB_HOST,
-            port = DB_PORT,
-            user = DB_USER,
-            password = DB_PASSWORD,
-            database = DB_NAME
+            host=DB_HOST,
+            port=DB_PORT,
+            user=DB_USER,
+            password=DB_PASSWORD,
+            database=DB_NAME
         )
         return conn
     except Exception as e:
