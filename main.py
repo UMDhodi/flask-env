@@ -4,6 +4,7 @@ import json
 import math
 from mysql.connector import connection
 
+app = Flask(__name__)
 
 # Define AWS Credentials
 DB_HOST = 'awsdatabase.cvmkooke0uh1.us-east-1.rds.amazonaws.com'
