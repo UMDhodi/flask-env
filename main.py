@@ -3,7 +3,7 @@ import pandas as pd
 import json
 import math
 from mysql.connector import connection
-from flask_cors import CORS
+
 
 # Define AWS Credentials
 DB_HOST = 'awsdatabase.cvmkooke0uh1.us-east-1.rds.amazonaws.com'
